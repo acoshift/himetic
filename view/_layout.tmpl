@@ -4,7 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Himetic{{template "layout.title"}}</title>
+<link rel="stylesheet" href="{{static "app.css"}}">
 {{template "layout.style"}}
+<div id="app">
 {{template "layout.body"}}
+</div>
+<script src="{{static "app.js"}}"></script>
 {{template "layout.script"}}
 {{end}}

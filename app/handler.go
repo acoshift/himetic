@@ -1,6 +1,9 @@
 package app
 
 import (
+	"html/template"
+	"io/ioutil"
+	"log"
 	"net/http"
 
 	"github.com/acoshift/header"
@@ -9,6 +12,7 @@ import (
 	"github.com/acoshift/middleware"
 	"github.com/acoshift/session"
 	"github.com/acoshift/webstatic"
+	yaml "gopkg.in/yaml.v2"
 )
 
 // Handler creates new app's handler for given config
@@ -19,7 +23,29 @@ func Handler(cfg Config) hime.HandlerFactory {
 			db:          cfg.DB,
 		}
 
+		// load static
+		static := make(map[string]string)
+		{
+			bs, err := ioutil.ReadFile("static.yaml")
+			if err != nil {
+				log.Fatalf("app: can not load static.yaml; %v", err)
+			}
+			err = yaml.Unmarshal(bs, static)
+			if err != nil {
+				log.Fatalf("app: can not unmarshal static.yaml; %v", err)
+			}
+		}
+
 		app.
+			TemplateFuncs(template.FuncMap{
+				"static": func(name string) string {
+					fn, ok := static[name]
+					if !ok {
+						log.Panicf("app: static %s not exists", name)
+					}
+					return "/-/" + fn
+				},
+			}).
 			Component("_layout.tmpl").
 			Template("index", "index.tmpl").
 			Minify().

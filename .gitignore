@@ -2,5 +2,17 @@
 vendor/
 node_modules/
 *.tmp
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 /himetic
 /gin-bin
+/assets/*-*.css
+/assets/*-*.js
+static.yaml

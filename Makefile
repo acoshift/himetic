@@ -7,12 +7,18 @@ K8S-CONTAINER=himetic
 help:
 	# himetic
 	#
+	# make setup -- setup project
 	# make start -- start server
 	# make dev -- start live reload on port 8000
 	# make clean -- remove built result
 	# make build -- build server
 	# make docker -- build then build docker image
 	# make deploy -- build, build docker image, then patch k8s resource with new image
+
+setup:
+	$(GO) get -u github.com/codegangsta/gin
+	yarn global add gulp
+	yarn install
 
 start:
 	$(GO) run main.go
@@ -22,8 +28,14 @@ dev:
 
 clean:
 	rm -f himetic
+	rm -f assets/app-*.css
+	rm -f assets/app-*.js
 
-build: clean
+.PHONY: assets
+assets:
+	gulp
+
+build: clean assets
 	env GOOS=linux GOARCH=amd64 CGO_ENABLED=0 $(GO) build -o himetic -ldflags '-w -s' main.go
 
 docker: build
