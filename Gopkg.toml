@@ -1,0 +1,35 @@
+[[constraint]]
+  name = "github.com/acoshift/hime"
+  version = "0.0.8"
+
+[[constraint]]
+  name = "github.com/acoshift/header"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/acoshift/httprouter"
+  version = "2.1.0"
+
+[[constraint]]
+  name = "github.com/acoshift/middleware"
+  version = "0.2.0"
+
+[[constraint]]
+  name = "github.com/acoshift/webstatic"
+  version = "1.0.0"
+
+[[constraint]]
+  name = "github.com/acoshift/session"
+  version = "0.4.1"
+
+[[constraint]]
+  name = "github.com/acoshift/configfile"
+  version = "1.0.0"
+
+[[constraint]]
+  name = "github.com/garyburd/redigo"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/lib/pq"
+  branch = "master"
