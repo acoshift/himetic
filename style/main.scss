@@ -1,1 +1,17 @@
-@import 'biomatic/src/build-full.scss';
+/**
+ * Required
+ *
+ * You can create and import your own config.scss
+ * instead of using biomatic's default config.scss
+ */
+@import 'biomatic/src/reset';
+@import 'biomatic/src/config';
+@import 'biomatic/src/mixins/mixins';
+
+/**
+ * Modules
+ */
+@import 'biomatic/src/layouts/layout';
+@import 'biomatic/src/components/component';
+@import 'biomatic/src/utilities/utilities';
+@import 'biomatic/src/atomic/atomic';
