@@ -22,8 +22,8 @@
 [[projects]]
   name = "github.com/acoshift/hime"
   packages = ["."]
-  revision = "e1142bda760b4eb3f4746642b20d4c8398079245"
-  version = "v0.0.8"
+  revision = "1c8708fc43cb06b4fa91c00982fb928b2e86a33a"
+  version = "v0.0.11"
 
 [[projects]]
   name = "github.com/acoshift/httprouter"
@@ -50,10 +50,10 @@
   version = "v1.0.0"
 
 [[projects]]
-  branch = "master"
   name = "github.com/garyburd/redigo"
   packages = ["internal","redis"]
-  revision = "5f161ed9cfbce31e5a0ec0b1c3c81087e2e9cbef"
+  revision = "d1ed5c67e5794de818ea85e6b522fda02623a484"
+  version = "v1.4.0"
 
 [[projects]]
   branch = "master"
@@ -73,9 +73,15 @@
   revision = "639f6272aec6b52094db77b9ec488214b0b4b1a1"
   version = "v2.3.2"
 
+[[projects]]
+  branch = "v2"
+  name = "gopkg.in/yaml.v2"
+  packages = ["."]
+  revision = "c95af922eae69f190717a0b7148960af8c55a072"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "e5f26726e6639cb83a680991ace376e0697b9789d9b1cd751045358908c409fa"
+  inputs-digest = "f228228d3dfd32bc211966dbb424cbbd8246ae7388624ea3190413e354e5d183"
   solver-name = "gps-cdcl"
   solver-version = 1
