@@ -16,3 +16,4 @@ yarn-error.log*
 /assets/*-*.css
 /assets/*-*.js
 static.yaml
+.build/
